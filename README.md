@@ -6,14 +6,13 @@ A collection of common improvements to Ubuntu / Kubuntu / KDE
 * **To vote for an Issue, open it, click on the smiley and add a Thumbs Up**
 * Serves as a repository of crowdsourced improvements for common issues
 
-..I suppose I may separate the general Ubuntu fixes from the KDE, but the aim is to provide a user from Windows the easiest startup path to an open source version of what their used to, and I believe Kubuntu (despite being larger than others) is that. Mint is close, but there are many more 'power' GUI features, Krusader being a prime example. 
+.
 
 This should show the Issues sorted by most 'Thumbs Up' reactions:
 
 https://github.com/auwsom/KDE-Kubuntu---Setup-Fixes-and-Installation-Settings-and-Tweaks---Vote-Ranked/issues?utf8=%E2%9C%93&q=is%3Aissue+sort%3Areactions-%2B1-desc+
 
-.
-.
+..I suppose I may separate the general Ubuntu fixes from the KDE, but the aim is to provide a user from Windows the easiest startup path to an open source version of what their used to, and I believe Kubuntu (despite being larger than others) is that. Mint is close, but there are many more 'power' GUI features, Krusader being a prime example. 
 
 Quick story, I've installed Linux distros many times over the years, but have always leaned back to Windows because of many of these very issues, despite wanting to support the alternatives and not being subject to Windows OS restrictions (etc). Recently, with the mammoth size of Windows 10 and all the default bloatware, I finally resolved to switch to using VMs from a Linux based, mostly to make backup and restore more simple (a single VM file) after countless times of having to patiently wade throught the painful reinstallation process and the even more painful re-setup process. I've spent many hours searching and learning how and designing a logical and stable boot process and VM setup with backups to the VM image file(s) as well as the running user profiles. I'm creating a blog about this setup design, but for the interested (and frustrated) here is a breif outline:
 
