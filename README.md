@@ -5,6 +5,7 @@ A collection of common improvements to KDE / Kubuntu
 * List your single configuration item as a separate Issue and vote
 * Serves as a repository of crowdsourced improvements for common issues
 
+-
 
 This should show the Issues sorted by most 'Thumbs Up' reactions:
 
