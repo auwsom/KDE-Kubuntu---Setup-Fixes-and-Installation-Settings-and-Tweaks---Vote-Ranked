@@ -33,7 +33,21 @@ efibootmgr; efibootmgr --order 0,1,2,3; efibootmgr --help
 
 - I would suggest updating and making very basic setup changes and then copy this partition to a space next to it. You'll probably want to change the UUID in GParted to make a unique Grub entry, but you may be able to load it with device id number (position). 
 
-- Here I would install Timeshift
+- Here I would install Timeshift which backups the OS on a system level (no user home directory). It needs a lot of space, snd this is reduntant of the partition copy directly above, which is a functional partition, but it backs up regularly and has a pretty simple retention setting. I think it used incremental, but not sure. A separate hard drive is the best way to go with the following backups, in case of device damage.
+
+- Next I use BackInTime to back the user's home directory. Again it has a pretty simple retention setting for month, week and day. It will back up on startup if it missed one, skip if there are no changes, and a few other handy setttings. I use the RSync option. 
+
+- Now you can adjust settings to your heart's desire without worrying about not having a least a basic working computer or about not being able to get back to where you were. However, that could mean sifting through many config files and logs for individual settings changed, and then worrying if the reinstall goes correctly. To avoid all that, I've implemented a VM system whereby using BackInTime is copies the entire VM file containing the whole OS and backs up regularly on a schedule. BackInTime has a retention setting that allows a 'snapshot' to be protected when named, so you can park files before a major upgrade or change. 
+
+- I used VirtualBox to start choosing the VDI format, but have found Virt-Manager works better for many reasons. The first is the aweful VBox GUI settings process, it's about 15 clicks just to change a storage media when it has the same UUID. Virt-Manager is by far more straightforward. It also seems much more CPU and memory efficient, and includes memory balooning by default to share memory between VMs. Adding host storage media connections are a little trial and error (for Windows use 'storage' with whole disk device, but can be used without installing virtio drivers. And for linux has a built-in menu for switching between tty terminals that doens't interfer with the host OS when using shortcuts ctrl+atl+F#.
+
+- Virt-Manager works with VDI format and I use VHD for Windows because it can be mounted using the Disk Management natively inside Windows. Audio is a little glitchy with Virt-Manager and Windows for some reason.
+
+- Furthermore, you can use VeraCrypt or TrueCrypt volumes to hold protected files including whole portable browsers and symbolically linked directories or files, including browser profiles and password software like KeePass. Then these files are only exposed when using them. A volume can also store a user's personal home directory, which can be mounted by VeraCrypt directly to the /home/ directory in a tty terminal. 
+
+- I'm still working out details on how to replicate Linux settings between users. The best strategy seems to be to separate user data and configuration files, unfortunately not all settings are stored in the .config directory (though I've thought about symlinking them all there). If one duplicates a user's directory, attaches it to a new username, the ownership are not automatically changed. They can be with 'chown -R user:user /home/user', but this still leaves many directory 'pointers' within config files with the /home/old-username. The best remedy so far is to mount a duplicate user to the old username directory in /home. That means they can't be used simultaneosuly, but updating or diff-ing settings between them is more simple (and none of the pointers are broken). I'm not sure if using 'usermod -m' changes any of these, I doubt it. They can be found using a find search.
+
+All that said, this system has been working out pretty well for me. Knock on wood..
 
 
 
