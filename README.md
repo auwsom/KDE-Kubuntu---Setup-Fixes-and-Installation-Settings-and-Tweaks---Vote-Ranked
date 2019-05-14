@@ -23,7 +23,7 @@ Quick story, I've installed Linux distros many times over the years, but have al
 - Create a new partition (carefully, after backing up anything irreplaceable. GParted is very stable, but just in case), usually make it NTFS format if you want to share with Windows, and copy either the partition or the files from the AIOBoot USB drive. You may have to mount the partition to copy files using 'Disk Utility' (usually standard, program is 'gnome-disks' and repo listing is 'sudo apt search udisks2'. Then you have either to go into the BIOS again to point it to /EFI/boot/grubx64.efi for AIOBoot or others in /EFI. Or use efibootmgr from linux to add an entry (if it doesn't automatically find it) and change the boot order.
 https://www.rodsbooks.com/efi-bootloaders/fallback.html
 https://www.rodsbooks.com/efi-bootloaders/installation.html
-efibootmgr --create --disk /dev/sda --part 4 --loader \\EFI\\boot\\grubx64.efi --label AIOBOOT-sda4
+efibootmgr --create --disk /dev/sda --part 4 --loader \\EFI\\boot\\grubx64.efi --label AIOBOOT-sda4;
 efibootmgr; efibootmgr --order 0,1,2,3; efibootmgr --help
 
 - Now you can add custom entries to Main.cfg for the AIO Boot menu. They should be in Grub format pointing to a partition or UUID. The topmost entry is default.
