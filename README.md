@@ -1,12 +1,12 @@
-# KDE-Kubuntu---Setup-Fixes-and-Installation-Settings-and-Tweaks---Vote-Ranked
+# Ubuntu-Kubuntu-KDE---Setup-Fixes-and-Installation-Settings-and-Tweaks---Vote-Ranked
 
-A collection of common improvements to KDE / Kubuntu
+A collection of common improvements to Ubuntu / Kubuntu / KDE
 * Vote ranked by GitHub's "reactions" (likes, or thumbs) on each Issue
 * List your single configuration item as a separate Issue and vote
 * **To vote for an Issue, open it, click on the smiley and add a Thumbs Up**
 * Serves as a repository of crowdsourced improvements for common issues
 
-.
+..I suppose I may separate the general Ubuntu fixes from the KDE, but the aim is to provide a user from Windows the easiest startup path to an open source version of what their used to, and I believe Kubuntu (despite being larger than others) is that. Mint is close, but there are many more 'power' GUI features, Krusader being a prime example. 
 
 This should show the Issues sorted by most 'Thumbs Up' reactions:
 
